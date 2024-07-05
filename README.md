@@ -1,6 +1,8 @@
 # 📱 Final Project - Mobile Programming
 
-![Project Banner]([https://example.com/your-project-banner.png](README%20images/icon-1971128_1280.png))
+<div align="center">
+  <img src="https://github.com/machhoai/Mobile_FinalProject/blob/main/README%20images/icon-1971128_1280.png" alt="Project Banner" width="300"/>
+</div>
 
 ## 🏫 Van Lang University
 
@@ -75,4 +77,6 @@ If you have any questions or need further assistance, feel free to contact any o
 
 We hope you enjoy using our order application and look forward to your feedback!
 
-![Van Lang University]([https://example.com/university-logo.png](README%20images/logo-van-lang-896x1024-1.png))
+<div align="center">
+  <img src="https://github.com/machhoai/Mobile_FinalProject/blob/main/README%20images/logo-van-lang-896x1024-1.png" alt="Van Lang University" width="300"/>
+</div>
