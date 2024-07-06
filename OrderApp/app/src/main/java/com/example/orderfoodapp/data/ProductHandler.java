@@ -77,7 +77,29 @@ public class ProductHandler extends SQLiteOpenHelper {
                 + "('banhbrowniesocola', 'Bánh Brownie Sô-cô-la', 30000, 0.1, 0, 'caphe, duong, nuoc', 'Annhe'), "
                 + "('banhmaracondua', 'Bánh Maracon dừa', 15000, 0.1, 0, 'caphe, duong, nuoc', 'Annhe'), "
                 + "('banhquysocola', 'Bánh Quy Socola', 25000, 0.1, 0, 'caphe, duong, nuoc', 'Annhe'), "
-                + "('banhsungtrau', 'Bánh Sừng Trâu', 30000, 0.1, 0, 'caphe, duong, nuoc', 'Annhe')";
+                + "('banhsungtrau', 'Bánh Sừng Trâu', 30000, 0.1, 0, 'caphe, duong, nuoc', 'Annhe')"
+                + "('burgerbo', 'Burger bò', 75000, 0.1, 0, 'bo, banhmi, rau, sot', 'MonChinh'), "
+                + "('burgerga', 'Burger gà', 70000, 0.1, 0, 'ga, banhmi, rau, sot', 'MonChinh'), "
+                + "('burgerchay', 'Burger chay', 60000, 0.1, 0, 'rau, banhmi, sot', 'MonChinh'), "
+                + "('my', 'Mỳ Ý Spaghetti', 80000, 0.1, 0, 'my, thit bo, sot', 'MonChinh'), "
+                + "('pizza', 'Pizza', 120000, 0.1, 0, 'bot mi, pho mai, sot ca chua, cac loai nhan', 'MonChinh'), "
+                + "('tacos', 'Tacos', 70000, 0.1, 0, 'vo banh mi, thit bo, rau, sot', 'MonChinh'), "
+                + "('nachos', 'Nachos', 65000, 0.1, 0, 'banh nacho, pho mai, sot', 'MonChinh'), "
+                + "('hotdog', 'Hot Dog', 50000, 0.1, 0, 'banh mi dai, xuc xich, sot', 'MonChinh'), "
+                + "('friedchicken', 'Gà rán', 75000, 0.1, 0, 'ga, bot mi, dau an, gia vi', 'MonChinh'), "
+                + "('club_sandwich', 'Club Sandwich', 65000, 0.1, 0, 'banh mi, thit ga, bacon, rau, sot', 'MonChinh'), "
+                + "('macandcheese', 'Mac and Cheese', 70000, 0.1, 0, 'nui, pho mai, sua, bot mi', 'MonChinh'), "
+                + "('lasagna', 'Lasagna', 95000, 0.1, 0, 'bot mi, thit bo, pho mai, sot ca chua', 'MonChinh'), "
+                + "('kem_vani', 'Kem vani', 25000, 0.1, 0, 'sua, duong, vanilla', 'TrangMieng'), "
+                + "('kem_socola', 'Kem socola', 27000, 0.1, 0, 'sua, duong, socola', 'TrangMieng'), "
+                + "('kem_dau', 'Kem dâu', 26000, 0.1, 0, 'sua, duong, dau', 'TrangMieng'), "
+                + "('che_dau_xanh', 'Chè đậu xanh', 20000, 0.1, 0, 'dau xanh, duong, nuoc cot dua', 'TrangMieng'), "
+                + "('che_thap_cam', 'Chè thập cẩm', 22000, 0.1, 0, 'dau, tra, sua', 'TrangMieng'), "
+                + "('che_dau_do', 'Chè đậu đỏ', 20000, 0.1, 0, 'dau do, duong, nuoc cot dua', 'TrangMieng'), "
+                + "('banh_flan', 'Bánh flan', 30000, 0.1, 0, 'trung, sua, duong, caramel', 'TrangMieng'), "
+                + "('banh_pudding', 'Bánh pudding', 32000, 0.1, 0, 'sua, duong, gelatin', 'TrangMieng'), "
+                + "('trai_cay_tuoi', 'Trái cây tươi', 20000, 0.1, 0, 'trai cay', 'TrangMieng'), "
+                + "('trai_cay_dam', 'Trái cây dầm', 22000, 0.1, 0, 'trai cay, sua dac', 'TrangMieng'), ";
         try {
             db.execSQL(sql);
         } catch (SQLException e) {
