@@ -67,7 +67,7 @@ public class ProductHandler extends SQLiteOpenHelper {
                 + "('banh_flan', 'Bánh flan', 30000, 0.1, 0, 'trung, sua, duong, caramel', 'TrangMieng'), "
                 + "('banh_pudding', 'Bánh pudding', 32000, 0.1, 0, 'sua, duong, gelatin', 'TrangMieng'), "
                 + "('trai_cay_tuoi', 'Trái cây tươi', 20000, 0.1, 0, 'trai cay', 'TrangMieng'), "
-                + "('trai_cay_dam', 'Trái cây dầm', 22000, 0.1, 0, 'trai cay, sua dac', 'TrangMieng'), ";
+                + "('trai_cay_dam', 'Trái cây dầm', 22000, 0.1, 0, 'trai cay, sua dac', 'TrangMieng'), "
                 + "'americano', 'Americano', 39000, 0.1, 0, 'coffee, đường, nước', 'Món uống'), "
                 + "('cappuchino', 'Cappochino', 49000, 0.1, 0, 'coffee, đường, nước', 'Món uống'), "
                 + "('matchalattenong', 'Matcha Latte Nóng', 60000, 0.1, 0, 'coffee, đường, nước, matcha', 'Món uống'), "
