@@ -1,4 +1,4 @@
-package com.example.orderfoodapp.data;
+package com.example.orderfoodapp.model;
 
 public class Product {
     String id;
@@ -11,8 +11,8 @@ public class Product {
     String classify;
 
     public Product(){
-
     }
+
     public Product(String id, String imageProduct, String product, int price, float sale, Boolean trending, String ingredient, String classify) {
         this.id = id;
         this.imageProduct = imageProduct;

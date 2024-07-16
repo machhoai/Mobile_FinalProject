@@ -1,4 +1,4 @@
-package com.example.orderfoodapp.data;
+package com.example.orderfoodapp.model;
 
 import android.content.Context;
 import android.database.SQLException;
