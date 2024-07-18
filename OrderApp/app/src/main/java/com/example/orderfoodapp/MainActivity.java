@@ -23,19 +23,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        if (savedInstanceState == null) {
-            // Create an instance of FoodFragment
-            FoodFragment foodFragment = new FoodFragment();
 
-            // Get the FragmentManager and start a transaction
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Replace the content of the container with the FoodFragment
-            fragmentTransaction.replace(R.id.frFood, foodFragment);
-
-            // Commit the transaction
-            fragmentTransaction.commit();
-        }
     }
 }
