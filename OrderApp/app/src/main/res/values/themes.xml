@@ -6,4 +6,6 @@
     </style>
 
     <style name="Theme.OrderFoodApp" parent="Base.Theme.OrderFoodApp" />
+    <!-- Thêm style cho NavigationView item -->
+
 </resources>

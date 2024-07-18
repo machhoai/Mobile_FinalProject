@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@color/colorOnError"
+    android:layout_margin="5dp"
+    app:shapeAppearanceOverlay="@style/RoundedBottomCorners"
     android:gravity="center_horizontal">
 
     <LinearLayout
@@ -21,7 +24,7 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgBackground"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="450dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/background"
                 android:scaleType="centerCrop"
@@ -30,7 +33,7 @@
             <ImageView
                 android:id="@+id/imgItem"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="450dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/club_sandwich" />

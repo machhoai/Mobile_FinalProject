@@ -1,21 +1,41 @@
-package com.example.orderfoodapp.view;
+package com.example.orderfoodapp.View;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.orderfoodapp.MainActivity;
 import com.example.orderfoodapp.R;
+import com.example.orderfoodapp.model.Cart;
+import com.example.orderfoodapp.model.CartDataHolder;
+import com.example.orderfoodapp.model.Product;
+
+import java.util.ArrayList;
 
 public class ProductDetailFragment extends Fragment {
 
-    private int quantity = 2;
+    private int quantity = 1;
     private TextView tvQuantity;
     private ImageButton btnIncrease;
     private ImageButton btnDecrease;
     private ImageButton btnAddToCart;
+    private ImageView imgItem;
+    private TextView product_name;
+    private TextView tvSaleOff;
+    private TextView tvPrice;
+    private TextView product_description;
+    private TextView section_ingredients;
+    private TextView tvSumPrice;
+    private ImageButton btnBack;
+    Product product  = new Product();
 
     public ProductDetailFragment() {
         // Required empty public constructor
@@ -35,29 +55,59 @@ public class ProductDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             // Retrieve parameters if any
+            product = (Product) getArguments().getSerializable("productDetail");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_product_detail, container, false);
+        addControl(view);
 
-        // Initialize UI components
+        setDataProduct();
+
+        addEvent();
+
+        return view;
+    }
+
+    void setDataProduct(){
+        int idImg = getContext().getResources().getIdentifier(product.getImageProduct(),"drawable", getContext().getPackageName());
+        imgItem.setImageResource(idImg);
+        product_name.setText(product.getProduct());
+        product_description.setText(product.getDescription());
+        tvPrice.setText(String.valueOf(product.getPrice()) + " đ");
+        if(product.getSale()!=0){
+            tvSaleOff.setText("Sale Off: " + String.valueOf((int)(product.getSale()*100)) + " %");
+        }
+        section_ingredients.setText(product.getIngredient());
+        tvQuantity.setText(String.valueOf(quantity));
+        tvSumPrice.setText(String.valueOf(Math.round(product.getPrice()*(1.0-product.getSale())) + " đ"));
+    }
+
+    void addControl(View view){
         tvQuantity = view.findViewById(R.id.tvQuantity);
         btnIncrease = view.findViewById(R.id.btnIncrease);
         btnDecrease = view.findViewById(R.id.btnDecrease);
         btnAddToCart = view.findViewById(R.id.btnAddToCart);
+        imgItem = view.findViewById(R.id.imgItem);
+        product_name = view.findViewById(R.id.product_name);
+        tvSaleOff = view.findViewById(R.id.tvSaleOff);
+        tvPrice = view.findViewById(R.id.tvPrice);
+        product_description = view.findViewById(R.id.product_description);
+        section_ingredients = view.findViewById(R.id.section_ingredients);
+        tvSumPrice = view.findViewById(R.id.tvSumPrice);
+        btnBack = view.findViewById(R.id.btnBack);
+    }
 
-        // Set initial quantity
-        tvQuantity.setText(String.valueOf(quantity));
-
+    void addEvent(){
         btnIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 quantity++;
                 tvQuantity.setText(String.valueOf(quantity));
+                tvSumPrice.setText(String.valueOf(Math.round(product.getPrice()*(1.0-product.getSale())*quantity)) + " đ");
             }
         });
 
@@ -67,6 +117,7 @@ public class ProductDetailFragment extends Fragment {
                 if (quantity > 1) {
                     quantity--;
                     tvQuantity.setText(String.valueOf(quantity));
+                    tvSumPrice.setText(String.valueOf(Math.round(product.getPrice()*(1.0-product.getSale())*quantity)) + " đ");
                 }
             }
         });
@@ -74,11 +125,16 @@ public class ProductDetailFragment extends Fragment {
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Thực hiện logic thêm vào giỏ hàng
-                // Ví dụ: thêm sản phẩm vào danh sách giỏ hàng, hiển thị thông báo, v.v.
+                Cart itemAddCart = new Cart(product,quantity);
+                CartDataHolder.getInstance().addProduct(itemAddCart);
+                Toast.makeText(getContext(), "Thêm Thành Công", Toast.LENGTH_SHORT).show();
             }
         });
-
-        return view;
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
     }
 }
