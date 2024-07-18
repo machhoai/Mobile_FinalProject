@@ -61,42 +61,59 @@
             android:id="@+id/payment_method_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/payment_cash"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_weight="1"
                 android:text="Tiền mặt"
                 android:textSize="16sp"
                 android:drawablePadding="8dp"
                 android:padding="12dp"
                 android:button="@drawable/cash_outline"
-
                 />
 
             <RadioButton
                 android:id="@+id/payment_qr"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="QR Banking"
                 android:textSize="16sp"
                 android:drawablePadding="8dp"
                 android:padding="12dp"
                 android:button="@drawable/qr_code_outline" />
+
         </RadioGroup>
 
         <!-- Total amount -->
-        <TextView
-            android:id="@+id/total_amount"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tổng cộng: 200.000đ"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:orientation="horizontal"
             android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:gravity="end" />
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/total_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số lượng: 5"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/total_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tổng cộng: 200.000đ"
+                android:gravity="end"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <!-- Payment button -->
         <Button
@@ -108,5 +125,16 @@
             android:text="Thanh Toán"
             android:textColor="@color/colorText"
             android:textSize="18sp" />
+
+        <!-- ImageView for QR Code -->
+        <ImageView
+            android:id="@+id/qrCodeImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:visibility="visible" />
     </LinearLayout>
 </LinearLayout>
