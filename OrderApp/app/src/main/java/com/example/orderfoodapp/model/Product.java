@@ -1,22 +1,26 @@
 package com.example.orderfoodapp.data;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     String id;
     String imageProduct;
     String product;
+    String description;
     int price;
     float sale;
-    Boolean trending;
+    int trending;
     String ingredient;
     String classify;
 
     public Product(){
 
     }
-    public Product(String id, String imageProduct, String product, int price, float sale, Boolean trending, String ingredient, String classify) {
+    public Product(String id, String imageProduct, String product, String description, int price, float sale, int trending, String ingredient, String classify) {
         this.id = id;
         this.imageProduct = imageProduct;
         this.product = product;
+        this.description = description;
         this.price = price;
         this.sale = sale;
         this.trending = trending;
@@ -44,7 +48,7 @@ public class Product {
         return sale;
     }
 
-    public Boolean getTrending() {
+    public int getTrending() {
         return trending;
     }
 
@@ -76,7 +80,7 @@ public class Product {
         this.sale = sale;
     }
 
-    public void setTrending(Boolean trending) {
+    public void setTrending(int trending) {
         this.trending = trending;
     }
 
@@ -86,5 +90,13 @@ public class Product {
 
     public void setClassify(String classify) {
         this.classify = classify;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
